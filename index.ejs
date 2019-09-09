@@ -14,6 +14,10 @@
       html, body {
         overscroll-behavior: none;
       }
+
+      button, input::placeholder {
+        user-select: none;
+      }
     </style>
 
     <% if (htmlWebpackPlugin.options.description) { %>

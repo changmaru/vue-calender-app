@@ -56,5 +56,6 @@
   height: 5vw;
   line-height: 6.25vw;
   text-align: center;
+  user-select: none;
 }
 </style>
