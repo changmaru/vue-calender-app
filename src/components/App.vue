@@ -32,7 +32,8 @@
         this.$data.selectedDate = parseInt(date, 10)
       },
       onAddSchedule: function (schedule) {
-        this.$data.scheduleList[this.$data.selectedDate].push(schedule)
+        if (schedule.match(/^\s*$/)) return
+        this.$data.scheduleList[this.$data.selectedDate].push(schedule.trim())
       },
       onRemoveSchedule: function (index) {
         this.$data.scheduleList[this.$data.selectedDate].splice(index, 1)
