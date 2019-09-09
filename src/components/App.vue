@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <Calendar></Calendar>
-    <Editor @submit.capture="console.log"></Editor>
+    <Editor :onAddSchedule="onAddSchedule"></Editor>
   </div>
 </template>
 
@@ -16,12 +16,14 @@
     },
     data: function () {
       return {
-        scheduleList: []
+        scheduleList: new Array(30).fill(0).map(v => []),
+        selectedDate: 8
       }
     },
     methods: {
-      addSchedule: function (event) {
-        console.log(event)
+      onAddSchedule: function (schedule) {
+        this.$data.scheduleList[this.$data.selectedDate].push(schedule)
+        console.log(this.$data.scheduleList[this.$data.selectedDate])
       }
     }
   }

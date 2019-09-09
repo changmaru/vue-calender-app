@@ -1,6 +1,6 @@
 <template>
   <div class="editor">
-    <ScheduleForm @add-schedule="handler"></ScheduleForm>
+    <ScheduleForm :onAddSchedule="onAddSchedule"></ScheduleForm>
     <Schedule name="hoge"></Schedule>
   </div>
 </template>
@@ -14,11 +14,7 @@
       Schedule,
       ScheduleForm
     },
-    methods: {
-      handler: function (event) {
-        this.$emit('add-schedule', event)
-      }
-    }
+    props: ['onAddSchedule']
   }
 </script>
 
