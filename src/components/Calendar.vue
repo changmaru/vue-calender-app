@@ -8,7 +8,11 @@
 
     <div class="date-grid">
       <div v-for="date in 30">
-        <Day :date="date" class="cell"></Day>
+        <Day
+          :date="date"
+          :onSelectDate="onSelectDate"
+          class="cell"
+        ></Day>
       </div>
     </div>
 
@@ -19,6 +23,7 @@
   import Day from "./Day"
   export default {
     name: 'calender',
+    props: ['onSelectDate'],
     components: { Day }
   }
 </script>

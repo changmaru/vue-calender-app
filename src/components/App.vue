@@ -1,6 +1,7 @@
 <template>
   <div id="container">
     <Calendar
+      :onSelectDate="onSelectDate"
     ></Calendar>
     <Editor
       :onAddSchedule="onAddSchedule"
@@ -26,9 +27,12 @@
       }
     },
     methods: {
+      onSelectDate: function (date) {
+        this.$data.selectedDate = parseInt(date, 10)
+        console.log(date)
+      },
       onAddSchedule: function (schedule) {
         this.$data.scheduleList[this.$data.selectedDate].push(schedule)
-        console.log(this.$data.scheduleList[this.$data.selectedDate])
       },
       onRemoveSchedule: function (index) {
         this.$data.scheduleList[this.$data.selectedDate].splice(index, 1)
