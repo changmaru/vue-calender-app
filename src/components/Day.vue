@@ -1,11 +1,16 @@
 <template>
-  <div> {{ date }} </div>
+  <div @click="selectDate"> {{ date }} </div>
 </template>
 
 <script>
   export default {
     name: 'day',
-    props: ['date']
+    props: ['onSelectDate', 'date'],
+    methods: {
+      selectDate: function () {
+        this.$props.onSelectDate(this.$props.date)
+      }
+    }
   }
 </script>
 
