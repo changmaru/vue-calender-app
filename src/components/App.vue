@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <Calendar
-      :scheduleList="scheduleList"
+      :hasScheduleList="hasScheduleList"
       :selectedDate="selectedDate"
       :onSelectDate="onSelectDate"
     ></Calendar>
@@ -38,6 +38,11 @@
       },
       onRemoveSchedule: function (index) {
         this.$data.scheduleList[this.$data.selectedDate - 1].splice(index, 1)
+      }
+    },
+    computed: {
+      hasScheduleList: function() {
+        return this.scheduleList.map(schedules => schedules.length > 0)
       }
     }
   }
