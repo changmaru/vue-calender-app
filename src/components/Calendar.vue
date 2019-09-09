@@ -1,18 +1,14 @@
 <template>
   <div class="grid">
     <div class="day-of-week">
-      <div>Su</div>
-      <div>Mo</div>
-      <div>Tu</div>
-      <div>We</div>
-      <div>Th</div>
-      <div>Fr</div>
-      <div>Sa</div>
+      <div v-for="day in ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']">
+          <div class="cell"> {{ day }} </div>
+      </div>
     </div>
 
     <div class="date-grid">
       <div v-for="date in 30">
-        <Day :date="date"></Day>
+        <Day :date="date" class="cell"></Day>
       </div>
     </div>
 
@@ -31,11 +27,28 @@
 /* The grid */
 .grid {
   width: 50vw;
+  min-height: 100vh;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-of-week {
+  border-bottom: 1px solid black;
 }
 
 .day-of-week,
 .date-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+}
+
+.cell {
+  width: 6.25vw;
+  height: 5vw;
+  line-height: 6.25vw;
+  text-align: center;
 }
 </style>
