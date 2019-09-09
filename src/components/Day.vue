@@ -1,9 +1,9 @@
 <template>
   <div
     @click="selectDate"
-    :class="{ selected: isSelected }"
+    :class="{ selected: isSelected, 'outer-date': true }"
   >
-    {{ date }}
+    <div class="date"> {{ date }} </div>
   </div>
 </template>
 
@@ -20,4 +20,19 @@
 </script>
 
 <style>
+.outer-date {
+  width: 3vw;
+  height: 3vw;
+  margin: 1vw 1.625vw;
+}
+
+.selected {
+  border-radius: 50%;
+  background: orange;
+}
+
+.date {
+  height: 100%;
+  transform: translateY(-50%);
+}
 </style>
