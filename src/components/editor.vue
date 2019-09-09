@@ -3,7 +3,7 @@
     <ScheduleForm
       :onAddSchedule="onAddSchedule"
     ></ScheduleForm>
-    <div v-for="(schedule, index) in schedules">
+    <div v-for="(schedule, index) in schedules" class="schedules">
       <Schedule
         :name="schedule"
         :index="index"
@@ -34,5 +34,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  border-left: 1px solid black;
+}
+
+.schedules {
+  width: 60%;
+  margin-bottom: 24px;
 }
 </style>

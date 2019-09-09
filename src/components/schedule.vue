@@ -1,7 +1,7 @@
 <template>
   <div class="schedule">
-    <div>{{ name }}</div>
-    <button @click="removeSchedule">X</button>
+    <div class="name">{{ name }}</div>
+    <button class="delete-button" @click="removeSchedule">X</button>
   </div>
 </template>
 
@@ -19,9 +19,15 @@
 
 <style>
 .schedule {
-  width: 60%;
+  width: 100%;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+.name {
+
+}
+
 </style>

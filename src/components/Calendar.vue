@@ -28,7 +28,6 @@
 .grid {
   width: 50vw;
   min-height: 100vh;
-  border-right: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
