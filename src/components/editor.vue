@@ -1,7 +1,15 @@
 <template>
   <div class="editor">
-    <ScheduleForm :onAddSchedule="onAddSchedule"></ScheduleForm>
-    <Schedule name="hoge"></Schedule>
+    <ScheduleForm
+      :onAddSchedule="onAddSchedule"
+    ></ScheduleForm>
+    <div v-for="(schedule, index) in schedules">
+      <Schedule
+        :name="schedule"
+        :index="index"
+        :onRemoveSchedule="onRemoveSchedule"
+      ></Schedule>
+    </div>
   </div>
 </template>
 
@@ -14,7 +22,7 @@
       Schedule,
       ScheduleForm
     },
-    props: ['onAddSchedule']
+    props: ['onAddSchedule', 'onRemoveSchedule', 'schedules']
   }
 </script>
 
