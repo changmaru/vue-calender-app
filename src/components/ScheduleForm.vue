@@ -14,6 +14,7 @@
     methods: {
       addSchedule: function (event) {
         const name = this.$refs.name.value
+        this.$refs.name.value = ''
         this.$props.onAddSchedule(name)
       }
     }
