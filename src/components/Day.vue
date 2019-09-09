@@ -1,11 +1,16 @@
 <template>
-  <div @click="selectDate"> {{ date }} </div>
+  <div
+    @click="selectDate"
+    :class="{ selected: isSelected }"
+  >
+    {{ date }}
+  </div>
 </template>
 
 <script>
   export default {
     name: 'day',
-    props: ['onSelectDate', 'date'],
+    props: ['onSelectDate', 'date', 'isSelected', 'selectedDate'],
     methods: {
       selectDate: function () {
         this.$props.onSelectDate(this.$props.date)

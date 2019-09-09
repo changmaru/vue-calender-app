@@ -10,6 +10,8 @@
       <div v-for="date in 30">
         <Day
           :date="date"
+          :isSelected="date === selectedDate"
+          :selectedDate="selectedDate"
           :onSelectDate="onSelectDate"
           class="cell"
         ></Day>
@@ -23,7 +25,7 @@
   import Day from "./Day"
   export default {
     name: 'calender',
-    props: ['onSelectDate'],
+    props: ['onSelectDate', 'selectedDate'],
     components: { Day }
   }
 </script>
