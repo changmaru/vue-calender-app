@@ -11,6 +11,7 @@
         <Day
           :date="date"
           :isSelected="date === selectedDate"
+          :hasSchedule="scheduleList[date - 1].length > 0"
           :selectedDate="selectedDate"
           :onSelectDate="onSelectDate"
           class="cell"
@@ -25,7 +26,7 @@
   import Day from "./Day"
   export default {
     name: 'calender',
-    props: ['onSelectDate', 'selectedDate'],
+    props: ['scheduleList', 'onSelectDate', 'selectedDate'],
     components: { Day }
   }
 </script>

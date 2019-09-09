@@ -1,13 +1,14 @@
 <template>
   <div id="container">
     <Calendar
+      :scheduleList="scheduleList"
       :selectedDate="selectedDate"
       :onSelectDate="onSelectDate"
     ></Calendar>
     <Editor
       :onAddSchedule="onAddSchedule"
       :onRemoveSchedule="onRemoveSchedule"
-      :schedules="scheduleList[selectedDate]"
+      :schedules="scheduleList[selectedDate - 1]"
     ></Editor>
   </div>
 </template>
@@ -33,10 +34,10 @@
       },
       onAddSchedule: function (schedule) {
         if (schedule.match(/^\s*$/)) return
-        this.$data.scheduleList[this.$data.selectedDate].push(schedule.trim())
+        this.$data.scheduleList[this.$data.selectedDate - 1].push(schedule.trim())
       },
       onRemoveSchedule: function (index) {
-        this.$data.scheduleList[this.$data.selectedDate].splice(index, 1)
+        this.$data.scheduleList[this.$data.selectedDate - 1].splice(index, 1)
       }
     }
   }

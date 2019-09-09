@@ -1,7 +1,7 @@
 <template>
   <div
     @click="selectDate"
-    :class="{ selected: isSelected, 'outer-date': true }"
+    :class="{ selected: isSelected, 'outer-date': true, hasSchedule: hasSchedule }"
   >
     <div class="date"> {{ date }} </div>
   </div>
@@ -10,7 +10,7 @@
 <script>
   export default {
     name: 'day',
-    props: ['onSelectDate', 'date', 'isSelected', 'selectedDate'],
+    props: ['onSelectDate', 'date', 'isSelected', 'hasSchedule', 'selectedDate'],
     methods: {
       selectDate: function () {
         this.$props.onSelectDate(this.$props.date)
@@ -24,6 +24,11 @@
   width: 3vw;
   height: 3vw;
   margin: 1vw 1.625vw;
+}
+
+.hasSchedule {
+  border-radius: 50%;
+  background: pink;
 }
 
 .selected {
