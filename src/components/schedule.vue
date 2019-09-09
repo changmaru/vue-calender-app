@@ -8,10 +8,10 @@
 <script>
   export default {
     name: 'schedule',
-    props: ['name'],
+    props: ['onRemoveSchedule', 'name', 'index'],
     methods: {
-      removeSchedule: function (event) {
-        this.$emit('remove-schedule', event)
+      removeSchedule: function () {
+        this.$props.onRemoveSchedule(this.$props.index)
       }
     }
   }

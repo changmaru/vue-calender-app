@@ -1,7 +1,12 @@
 <template>
   <div id="container">
-    <Calendar></Calendar>
-    <Editor :onAddSchedule="onAddSchedule"></Editor>
+    <Calendar
+    ></Calendar>
+    <Editor
+      :onAddSchedule="onAddSchedule"
+      :onRemoveSchedule="onRemoveSchedule"
+      :schedules="scheduleList[selectedDate]"
+    ></Editor>
   </div>
 </template>
 
@@ -24,6 +29,9 @@
       onAddSchedule: function (schedule) {
         this.$data.scheduleList[this.$data.selectedDate].push(schedule)
         console.log(this.$data.scheduleList[this.$data.selectedDate])
+      },
+      onRemoveSchedule: function (index) {
+        this.$data.scheduleList[this.$data.selectedDate].splice(index, 1)
       }
     }
   }
