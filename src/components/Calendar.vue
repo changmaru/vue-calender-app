@@ -1,12 +1,12 @@
 <template>
-  <div class="grid">
+  <div class="calendar">
     <div class="day-of-week">
       <div v-for="day in ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']" :key="day">
           <Day :date="day"></Day>
       </div>
     </div>
 
-    <div class="date-grid">
+    <div class="dates">
       <div v-for="date in 30" :key="date">
         <Day
           :date="date"
@@ -31,7 +31,7 @@
 </script>
 
 <style>
-.grid {
+.calendar {
   width: 50vw;
   min-height: 100vh;
   display: flex;
@@ -45,7 +45,7 @@
 }
 
 .day-of-week,
-.date-grid {
+.dates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
