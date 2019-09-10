@@ -11,6 +11,7 @@
     props: ['onRemoveSchedule', 'name', 'index'],
     methods: {
       removeSchedule: function () {
+        if (!this.$props.onRemoveSchedule) return
         this.$props.onRemoveSchedule(this.$props.index)
       }
     }
@@ -25,9 +26,4 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.name {
-
-}
-
 </style>
