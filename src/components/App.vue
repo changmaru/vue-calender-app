@@ -25,7 +25,7 @@
     data: function () {
       return {
         scheduleList: new Array(30).fill(0).map(v => []),
-        selectedDate: 8
+        selectedDate: new Date().getDate()
       }
     },
     methods: {
