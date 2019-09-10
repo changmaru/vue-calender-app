@@ -23,7 +23,7 @@
 <script>
   import Day from "./Day"
   export default {
-    name: 'calender',
+    name: 'calendar',
     props: ['hasScheduleList', 'onSelectDate', 'selectedDate'],
     components: { Day }
   }
