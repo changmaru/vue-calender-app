@@ -3,7 +3,7 @@
     <ScheduleForm
       :onAddSchedule="onAddSchedule"
     ></ScheduleForm>
-    <div v-for="(schedule, index) in schedules" class="schedules">
+    <div v-for="(schedule, index) in schedules" :key="index" class="schedules">
       <Schedule
         :name="schedule"
         :index="index"

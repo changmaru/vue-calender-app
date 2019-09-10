@@ -1,13 +1,13 @@
 <template>
   <div class="grid">
     <div class="day-of-week">
-      <div v-for="day in ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']">
+      <div v-for="day in ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']" :key="day">
           <div class="cell"> {{ day }} </div>
       </div>
     </div>
 
     <div class="date-grid">
-      <div v-for="date in 30">
+      <div v-for="date in 30" :key="date">
         <Day
           :date="date"
           :isSelected="date === selectedDate"
