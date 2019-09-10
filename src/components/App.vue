@@ -15,7 +15,7 @@
 
 <script>
   import Calendar from "./Calendar"
-  import Editor from "./editor"
+  import Editor from "./Editor"
   export default {
     name: 'app',
     components: {

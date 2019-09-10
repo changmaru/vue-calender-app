@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Schedule from "./schedule"
+  import Schedule from "./Schedule"
   import ScheduleForm from "./ScheduleForm"
   export default {
     name: 'editor',
