@@ -2,7 +2,7 @@
   <div class="grid">
     <div class="day-of-week">
       <div v-for="day in ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']" :key="day">
-          <div class="cell"> {{ day }} </div>
+          <Day :date="day"></Day>
       </div>
     </div>
 
@@ -10,11 +10,10 @@
       <div v-for="date in 30" :key="date">
         <Day
           :date="date"
-          :isSelected="date === selectedDate"
+          :selected="date === selectedDate"
           :hasSchedule="hasScheduleList[date - 1]"
           :selectedDate="selectedDate"
           :onSelectDate="onSelectDate"
-          class="cell"
         ></Day>
       </div>
     </div>
@@ -32,7 +31,6 @@
 </script>
 
 <style>
-/* The grid */
 .grid {
   width: 50vw;
   min-height: 100vh;
@@ -50,13 +48,5 @@
 .date-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-}
-
-.cell {
-  width: 6.25vw;
-  height: 5vw;
-  line-height: 6.25vw;
-  text-align: center;
-  user-select: none;
 }
 </style>
