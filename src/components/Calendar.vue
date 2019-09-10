@@ -2,7 +2,7 @@
   <div class="calendar">
     <div class="day-of-week">
       <div v-for="day in ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']" :key="day">
-          <Day :date="day"></Day>
+          <Day :date="day" />
       </div>
     </div>
 
@@ -14,10 +14,9 @@
           :hasSchedule="hasScheduleList[date - 1]"
           :selectedDate="selectedDate"
           :onSelectDate="onSelectDate"
-        ></Day>
+        />
       </div>
     </div>
-
   </div>
 </template>
 

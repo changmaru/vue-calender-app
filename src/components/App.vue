@@ -4,12 +4,12 @@
       :hasScheduleList="hasScheduleList"
       :selectedDate="selectedDate"
       :onSelectDate="onSelectDate"
-    ></Calendar>
+    />
     <Editor
       :onAddSchedule="onAddSchedule"
       :onRemoveSchedule="onRemoveSchedule"
       :schedules="scheduleList[selectedDate - 1]"
-    ></Editor>
+    />
   </div>
 </template>
 

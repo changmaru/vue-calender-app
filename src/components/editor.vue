@@ -1,14 +1,12 @@
 <template>
   <div class="editor">
-    <ScheduleForm
-      :onAddSchedule="onAddSchedule"
-    ></ScheduleForm>
+    <ScheduleForm :onAddSchedule="onAddSchedule" />
     <div v-for="(schedule, index) in schedules" :key="index" class="schedules">
       <Schedule
         :name="schedule"
         :index="index"
         :onRemoveSchedule="onRemoveSchedule"
-      ></Schedule>
+      />
     </div>
   </div>
 </template>
