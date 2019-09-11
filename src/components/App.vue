@@ -40,6 +40,15 @@
         this.$data.scheduleList[this.$data.selectedDate - 1].splice(index, 1)
       }
     },
+    mounted: function () {
+      if (!localStorage.scheduleList) return
+      this.scheduleList = JSON.parse(localStorage.scheduleList)
+    },
+    watch: {
+      scheduleList(newScheduleList) {
+        localStorage.scheduleList = JSON.stringify(newScheduleList)
+      }
+    },
     computed: {
       hasScheduleList: function() {
         return this.scheduleList.map(schedules => schedules.length > 0)
