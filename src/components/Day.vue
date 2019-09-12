@@ -1,11 +1,10 @@
 <template>
-  <div class="outer-date">
+  <div class="date-container">
     <div
-      @click="selectDate"
-      :class="{ selected, 'inner-date': true, 'has-schedule': hasSchedule }"
-    >
-      <div class="date"> {{ date }} </div>
-    </div>
+      v-if="selected || hasSchedule"
+      class="marker"
+      :class="{ selected, 'has-schedule': hasSchedule }" />
+    <div class="date" @click="selectDate"> {{ date }} </div>
   </div>
 </template>
 
@@ -23,32 +22,32 @@
 </script>
 
 <style>
-.outer-date {
+.date-container {
   width: 6.25vw;
   height: 5vw;
-  line-height: 6.25vw;
-  text-align: center;
-  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.inner-date {
+.marker {
+  position: absolute;
   width: 3vw;
   height: 3vw;
-  margin: 1vw 1.625vw;
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .has-schedule {
-  border-radius: 50%;
   background: pink;
 }
 
 .selected {
-  border-radius: 50%;
   background: orange;
 }
 
 .date {
-  height: 100%;
-  transform: translateY(-50%);
+  user-select: none;
+  z-index: 1;
 }
 </style>
